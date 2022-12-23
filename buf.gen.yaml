@@ -1,0 +1,8 @@
+version: v1
+plugins:
+  - plugin: go
+    out: ./
+    opt: module=berty.tech/weshnet
+  - plugin: go-grpc
+    out: ./
+    opt: module=berty.tech/weshnet

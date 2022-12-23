@@ -14,3 +14,19 @@ golang 1.18.4
 # issue and to update the golangci-lint Github Actions step accordingly.
 #-----
 golangci-lint 1.50.1
+#
+#-----
+# buf 1.10.0 is simply the most recent version available to date (12/22).
+# There is no contraindication for updating it.
+#-----
+buf 1.10.0
+
+#-----
+# protoc-gen-go 1.28.1 is simply the most recent version available to date (12/22).
+# There is no contraindication for updating it.
+protoc-gen-go 1.28.1
+
+#-----
+# protoc-gen-go-grpc 1.2.0 is simply the most recent version available to date (12/22).
+# There is no contraindication for updating it.
+protoc-gen-go-grpc 1.2.0
