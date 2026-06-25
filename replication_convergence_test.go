@@ -26,6 +26,13 @@ import (
 // ConnectPeers — modelling the one network reconnect that discovery would
 // produce. Everything after that is the real stack: the reconnect re-fires the
 // head exchange, which backfills the whole log. No retry loop is used.
+//
+// A single reconnect is reliable here because this isolated, clean reconnect
+// rarely trips the go-libp2p-pubsub connect/disconnect race that can drop a
+// peer's subscriptions on reconnect (the reconnect's new-peer event is deduped
+// against the not-yet-removed stale peer entry). It is low-probability, not
+// immune: the busier bertyreplication topology hits it ~1/100 and needs a
+// reconnect retry loop.
 func TestScenario_ReplicationConvergenceOfflinePeerCatchesUp(t *testing.T) {
 	testutil.FilterStabilityAndSpeed(t, testutil.Flappy, testutil.Slow)
 
